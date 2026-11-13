@@ -6,8 +6,6 @@ from odoo import Command, _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
 
-
-
 class SaleOrder(models.Model):
     """Add a Site to sales orders.
 
@@ -42,7 +40,7 @@ class SaleOrder(models.Model):
     # One record per delivery, shown in the Shipping tab.
     shipping_group_ids = fields.One2many(
         "sale.shipping.group", "order_id", string="Shipping Overview", copy=False
-    )    
+    )
 
     # -------------------------------------------------------------------------
     # Onchange
@@ -288,4 +286,4 @@ class SaleOrder(models.Model):
             )
             # RFQ lines are created in the same order as the groups.
             for group, rfq_line in zip(company_groups, rfq.order_line):
-                group.shipping_purchase_line_id = rfq_line            
+                group.shipping_purchase_line_id = rfq_line

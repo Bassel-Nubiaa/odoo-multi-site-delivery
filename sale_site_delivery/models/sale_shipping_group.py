@@ -1,6 +1,5 @@
 """Shipping group: one delivery of a sales order, prepared before confirmation."""
 
-# from odoo import api, fields, models
 from odoo import _, api, fields, models
 
 

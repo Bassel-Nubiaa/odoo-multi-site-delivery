@@ -1,3 +1,4 @@
+"""Models of the Sales Site Delivery module."""
 from . import contact_site
 from . import purchase_order
 from . import sale_order

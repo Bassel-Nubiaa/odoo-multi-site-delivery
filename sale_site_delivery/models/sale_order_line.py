@@ -5,7 +5,6 @@ from odoo.exceptions import UserError, ValidationError
 from odoo.tools import float_compare
 
 
-
 class SaleOrderLine(models.Model):
     """Supply each order line from a chosen warehouse or by dropshipping.
 
@@ -50,12 +49,12 @@ class SaleOrderLine(models.Model):
     # Any contact can deliver; employees are detected through the Employees app.
     delivered_by_id = fields.Many2one("res.partner", string="Delivered By")
     delivered_by_is_employee = fields.Boolean(
-        string="Employee", compute="_compute_delivered_by_is_employee")
-    
+        string="Employee", compute="_compute_delivered_by_is_employee"
+    )
+
     # True for the Shipping service line, which may also carry a Delivered By.
-    is_shipping_line = fields.Boolean(compute="_compute_is_shipping_line")    
-    
-    
+    is_shipping_line = fields.Boolean(compute="_compute_is_shipping_line")
+
     # -------------------------------------------------------------------------
     # Compute methods
     # -------------------------------------------------------------------------
@@ -90,7 +89,8 @@ class SaleOrderLine(models.Model):
         for line in self:
             line.delivered_by_is_employee = bool(
                 line.delivered_by_id
-                and line.delivered_by_id in employees.work_contact_id)            
+                and line.delivered_by_id in employees.work_contact_id
+            )
 
     @api.depends("product_id")
     def _compute_is_shipping_line(self):
@@ -173,8 +173,9 @@ class SaleOrderLine(models.Model):
             uom_id=self.product_uom,
         )
         return seller or self.product_id.seller_ids.filtered(
-            lambda s: s.partner_id == self.dropship_vendor_id
+            lambda seller: seller.partner_id == self.dropship_vendor_id
         )[:1]
+
     # -------------------------------------------------------------------------
     # CRUD: lock goods lines once shipping details are confirmed
     # -------------------------------------------------------------------------
@@ -271,4 +272,4 @@ class SaleOrderLine(models.Model):
             lambda picking: picking.state not in ("cancel", "done")
         )
         if pickings:
-            pickings.action_confirm()    
+            pickings.action_confirm()

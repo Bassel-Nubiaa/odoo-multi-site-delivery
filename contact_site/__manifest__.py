@@ -1,10 +1,11 @@
+# Manifest of the Contact Sites module.
 {
     "name": "Contact Sites",
     "version": "17.0.1.0.0",
     "summary": "Manage land sites linked to an owner or a subcontractor",
     "category": "Sales/CRM",
     "author": "Bassel Nubiaa",
-    "website": "https://github.com/Bassel-Nubiaa/odoo-addons",
+    "website": "https://github.com/Bassel-Nubiaa/odoo-multi-site-delivery",
     "license": "LGPL-3",
     "depends": ["contacts"],
     "data": [

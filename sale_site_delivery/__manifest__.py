@@ -1,10 +1,11 @@
+# Manifest of the Sales Site Delivery module.
 {
     "name": "Sales Site Delivery",
     "version": "17.0.1.0.0",
     "summary": "Deliver sales orders to land sites",
     "category": "Sales/Sales",
     "author": "Bassel Nubiaa",
-    "website": "https://github.com/Bassel-Nubiaa/odoo-addons",
+    "website": "https://github.com/Bassel-Nubiaa/odoo-multi-site-delivery",
     "license": "LGPL-3",
     "depends": [
         "contact_site",
@@ -21,7 +22,7 @@
         "views/sale_order_views.xml",
         "views/stock_picking_views.xml",
         "report/report_deliveryslip.xml",
-    ],  
+    ],
     "installable": True,
     "application": False,
 }

@@ -31,6 +31,7 @@
             </xpath>
         </field>
     </record>
+
     <!-- Order lines: choose the source of each line (warehouse or dropship) -->
     <record id="sale_order_view_form_inherit_line_source" model="ir.ui.view">
         <field name="name">sale.order.view.form.inherit.line.source</field>
@@ -60,22 +61,19 @@
                        options="{'no_create': True}"/>
                 <field name="delivered_by_id"
                        optional="show"
-                       invisible="display_type or (product_type == 'service' and not is_shipping_line)"                       
+                       invisible="display_type or (product_type == 'service' and not is_shipping_line)"
                        required="not display_type and product_type != 'service'"
                        readonly="is_source_locked"
                        options="{'no_create': True}"/>
                 <field name="is_shipping_line" column_invisible="True"/>
-
                 <field name="delivered_by_is_employee"
                        optional="show"
-                       invisible="display_type or not delivered_by_id"/>  
-                <field name="is_shipping_line" column_invisible="True"/>
-
+                       invisible="display_type or not delivered_by_id"/>
             </xpath>
         </field>
     </record>
 
-        <!-- Sales order: shipping review buttons, Confirm only after the review, and the Shipping tab -->
+    <!-- Sales order: shipping review buttons, Confirm only after the review, and the Shipping tab -->
     <record id="sale_order_view_form_inherit_shipping_review" model="ir.ui.view">
         <field name="name">sale.order.view.form.inherit.shipping.review</field>
         <field name="model">sale.order</field>
@@ -130,4 +128,5 @@
             </page>
         </field>
     </record>
+
 </odoo>
