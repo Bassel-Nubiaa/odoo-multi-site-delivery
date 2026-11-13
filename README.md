@@ -8,13 +8,12 @@ reviewed before the order is confirmed.
 Developed by Bassel Nubiaa, based on an Odoo implementation project for a
 trading and distribution company.
 
-## Branches
+## Versions
 
 | Branch | Odoo version | Status |
 |--------|--------------|--------|
 | `17.0` | 17.0         | Available |
-| `18.0` | 18.0         | Coming soon |
-| `19.0` | 19.0         | Coming soon |
+| — | 18.0, 19.0   | Planned |
 
 ## Modules
 
@@ -32,10 +31,9 @@ which are not included in this repository.
 git clone -b 17.0 https://github.com/Bassel-Nubiaa/odoo-multi-site-delivery.git
 ```
 
-Replace `17.0` with the branch corresponding to the target Odoo version. Add the
-cloned directory to the `addons_path` of the Odoo instance, restart the server,
-update the Apps list, and install `sale_site_delivery`; `contact_site` is
-installed with it.
+Add the cloned directory to the `addons_path` of the Odoo instance, restart the server,
+update the Apps list, and install `sale_site_delivery`; `contact_site` is installed
+with it.
 
 ## License
 
